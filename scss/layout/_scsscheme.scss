@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fcf1de;
+    border-radius: 10px;
+    color: #4d4d4d;
+    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+    padding: 20px;
+    margin: 45px 20px 0;
+
+    &__bottom {
+        margin-bottom: 45px;
+    }
+
+    @include mq(xl) {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+
+    img {
+        width: 100%;
+        filter: sepia(50%);
+    }
+
+    @include mq(xl) {
+        margin-right: 20px;
+    }
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+
+    h1 {
+        @include mq(xl) {
+            margin-top: 0;
+        }
+    }
+
+    ul {
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
+    ul, p {
+        margin-bottom: 40px;
+    }
+
+    a {
+        color: #4d4d4d;
+        font-size: 1.25rem;
+
+        &:hover {
+            color: #f52f0c;
+        }
+    }
+
+    .score {
+        margin-bottom: 30px;
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        a {
+            font-size: 2rem;
+        }
+    }
+}

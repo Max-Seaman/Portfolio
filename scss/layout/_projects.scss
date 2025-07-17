@@ -1,0 +1,63 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(10px, 1fr));
+    grid-gap: 30px;
+}
+
+.project-card {
+    position: relative;
+    background-color: #fcf1de;
+    border-radius: 10px;
+    color: #4d4d4d;
+    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+    
+    &--future {
+        opacity: 0.3;
+    }
+
+    &--test {
+        transition: 0.3s ease;
+        top: 0;
+
+        &:hover {
+            top: -10px;
+        }
+    }
+
+    .imgtag img {
+        width: 100%;
+        filter:  sepia(0.9);
+        border-radius: 10px 10px 0 0;
+    }
+
+    .tag {
+        position: absolute;
+        right: 0;
+        top: 2%;
+        color: #fcf1de;
+        padding: 0 10px;
+        text-transform: uppercase;
+        border-radius: 2px 0 0 2px;
+        font-size: 1rem;
+        line-height: 2;
+        z-index: 2;
+
+        &--future {
+            background-color: #f52f0c;
+        }
+    }
+
+    .content {
+        padding: 20px;
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', sans-serif;
+    background-color: #f0e4cc;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    padding-top: 20px;
+    color: #f0e4cc;
+
+    @include mq(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #4d4d4d;
+    }
+
+    @include mq(xxxl) {
+        width: 300px;
+    }
+  }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include mq(md) {
+        margin-left: 200px; /* Same as sidebar width */
+    }
+
+    @include mq(xxxl) {
+        margin-left: 300px; /* Same as sidebar width */
+    }
+  }
+
+.hero {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+}
+
+#about, #projects, #contactform, .container {
+    margin: 120px 20px 0;
+
+    @include mq(md) {
+        max-width: 478px;
+    }
+
+    @include mq(lg) {
+        max-width: 702px;
+    }
+
+    @include mq(xl) {
+        max-width: 970px;
+    }
+}
+
+#about, #projects, #contactform {
+    @include mq(xxl) {
+        max-width: 1310px;
+    } 
+}
