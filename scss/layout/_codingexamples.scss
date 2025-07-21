@@ -1,5 +1,6 @@
 .coming-soon {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    @extend %light-container;
+    padding: 20px;
+    margin-top: 30vh;
+    font-size: 3rem;
 }

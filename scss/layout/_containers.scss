@@ -1,22 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
 body {
     margin: 0;
     font-family: 'Libre Baskerville', sans-serif;
-    background-color: #f0e4cc;
+    background-color: $primary__color;
+    box-sizing: border-box;
+    letter-spacing: 0.4px;
 }
+
+//SIDEBAR
 
 .sidebar {
     display: none;
     position: fixed;
-    width: 200px;
-    height: 100%;
+    @include size(200px, 100%);
     padding-top: 20px;
-    color: #f0e4cc;
+    color: $primary__color;
 
     @include mq(md) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #4d4d4d;
+        @include flex(column, center);
+        background-color: $primary__color--dark;
     }
 
     @include mq(xxxl) {
@@ -24,11 +27,10 @@ body {
     }
   }
 
+//MAIN
+
 .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column, center, center);
 
     @include mq(md) {
         margin-left: 200px; /* Same as sidebar width */
@@ -39,14 +41,15 @@ body {
     }
   }
 
+//HERO IMG 
+
 .hero {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+    @include flex(null, center, center);
+    @include size(100%, 100vh);
     position: relative;
-    justify-content: center;
 }
+
+//CONTAINER MQ
 
 #about, #projects, #contactform, .container {
     margin: 120px 20px 0;

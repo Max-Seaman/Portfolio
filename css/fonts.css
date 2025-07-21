@@ -31,11 +31,14 @@
   content: "\f078";
 }
 .icon-linkedin:before {
-  content: "\f08c";
-}
-.icon-github:before {
-  content: "\f092";
+  content: "\f0e1";
 }
 .icon-menu:before {
   content: "\e900";
+}
+.icon-discord:before {
+  content: "\e901";
+}
+.icon-github:before {
+  content: "\e902";
 }

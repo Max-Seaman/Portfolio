@@ -2,25 +2,24 @@
     img {
         position: absolute;
         object-fit: cover;
-        width: 100%;
-        height: 100%;
+        @include size(100%, 100%);
+       
     }
 
     &__txt {
-        display: flex;
-        flex-direction: column;
+        @include flex(column);
         height: 85%;
         text-align: center;
         z-index: 2;
         margin: 30px;
-        color: #fff6dd;
+        color: $text__color--hero;
 
         &--main {
             background-color: rgba(125, 117, 105, 0.7);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 48px;
-            box-shadow:  0 0 10px 7px rgba(125, 117, 105, 0.7);
+            box-shadow:  0 0 10px 7px rgba(125, 117, 105, 0.8);
             
 
             h1 {
@@ -53,41 +52,34 @@
         }
 
         &--scroll {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-top: auto;
+            @include flex(column, center);
+            margin-bottom: 20px;
 
             p {
                 margin: 10px;
-                color: #50483d;
+                color: $image__hero--scroll;
                 font-size: 2rem;
             }
 
             a {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #50483d;
+                @include flex(null, center, center);
+                @include size(70px, 70px);
+                background-color: $image__hero--scroll;
                 border-radius: 50%;
-                height: 70px;
-                width: 70px;
 
                 &:hover {
-                    background-color: #d92f0d;
+                    background-color: $primary__color--red;
                 }
 
                 i {
-                    padding-bottom: 5px;
-                    color: #fff6dd;
+                    padding-bottom: 8px;
+                    color: $text__color--hero;
                     font-size: 3rem;
                 }
             }
         }
     }
 }
-
 
 .spacer {
     flex:  1;

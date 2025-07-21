@@ -1,14 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(column, center);
+    @include spacing(20px, 45px 20px 0);
+    @extend %light-container;
     text-align: center;
-    background-color: #fcf1de;
-    border-radius: 10px;
-    color: #4d4d4d;
-    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
-    padding: 20px;
-    margin: 45px 20px 0;
 
     &__bottom {
         margin-bottom: 45px;
@@ -21,15 +15,13 @@
 }
 
 .image-wrapper {
-    display: flex;
-    align-items: center;
+    @include flex(null, center);
+    @include size(100%, null, 600px);
     position: relative;
-    width: 100%;
-    max-width: 600px;
 
     img {
         width: 100%;
-        filter: sepia(50%);
+        filter: sepia(60%);
     }
 
     @include mq(xl) {
@@ -38,8 +30,7 @@
 }
 
 .content {
-    width: 100%;
-    max-width: 600px;
+    @include size(100%, null, 600px);
 
     h1 {
         @include mq(xl) {
@@ -57,11 +48,11 @@
     }
 
     a {
-        color: #4d4d4d;
+        color: $primary__color--dark;
         font-size: 1.25rem;
 
         &:hover {
-            color: #f52f0c;
+            color: $primary__color--red;
         }
     }
 

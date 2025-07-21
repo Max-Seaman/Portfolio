@@ -1,0 +1,13 @@
+%light-container {
+    background-color: $primary__color--light;
+    border-radius: 10px;
+    color: $primary__color--dark;
+    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+}
+
+%dark-container {
+    background-color: $primary__color--dark;
+    border-radius: 10px;
+    color: $primary__color--light;
+    box-shadow: 0 0 20px 5px rgba(28, 28, 28, 0.4);
+}

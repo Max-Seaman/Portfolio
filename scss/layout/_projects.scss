@@ -6,10 +6,7 @@
 
 .project-card {
     position: relative;
-    background-color: #fcf1de;
-    border-radius: 10px;
-    color: #4d4d4d;
-    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+    @extend %light-container;
     
     &--future {
         opacity: 0.3;
@@ -34,7 +31,7 @@
         position: absolute;
         right: 0;
         top: 2%;
-        color: #fcf1de;
+        color: $primary__color;
         padding: 0 10px;
         text-transform: uppercase;
         border-radius: 2px 0 0 2px;
@@ -43,7 +40,7 @@
         z-index: 2;
 
         &--future {
-            background-color: #f52f0c;
+            background-color: $primary__color--red;
         }
     }
 

@@ -1,8 +1,5 @@
 #about {
-    background-color: #fcf1de;
-    border-radius: 10px;
-    color: #4d4d4d;
-    box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+    @extend %light-container;
     
     h1, p {
         margin: 30px;

@@ -2,7 +2,7 @@
 .project-card--1 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--1 {
     grid-column: span 3;
   }
@@ -16,7 +16,7 @@
 .project-card--2 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--2 {
     grid-column: span 3;
   }
@@ -30,7 +30,7 @@
 .project-card--3 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--3 {
     grid-column: span 3;
   }
@@ -44,7 +44,7 @@
 .project-card--4 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--4 {
     grid-column: span 3;
   }
@@ -58,7 +58,7 @@
 .project-card--5 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--5 {
     grid-column: span 3;
   }
@@ -72,7 +72,7 @@
 .project-card--6 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--6 {
     grid-column: span 3;
   }
@@ -86,7 +86,7 @@
 .project-card--7 {
   grid-column: span 6;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-card--7 {
     grid-column: span 3;
   }
@@ -97,17 +97,37 @@
   }
 }
 
-a, button {
+.container, .coming-soon, .project-card, #about {
+  background-color: #fcf1de;
+  border-radius: 10px;
+  color: #4d4d4d;
+  box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
+}
+
+#contactform {
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  color: #fcf1de;
+  box-shadow: 0 0 20px 5px rgba(28, 28, 28, 0.4);
+}
+
+a, button, strong {
   text-decoration: none;
 }
-a:hover, button:hover {
+a:hover, button:hover, strong:hover {
   cursor: pointer;
+}
+
+strong:hover {
+  color: #d92f0d;
 }
 
 body {
   margin: 0;
   font-family: "Libre Baskerville", sans-serif;
   background-color: #f0e4cc;
+  box-sizing: border-box;
+  letter-spacing: 0.4px;
 }
 
 .sidebar {
@@ -152,10 +172,10 @@ body {
 .hero {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   position: relative;
-  justify-content: center;
 }
 
 #about, #projects, #contactform, .container {
@@ -191,22 +211,20 @@ body {
 }
 .sidebar a {
   color: #f0e4cc;
-  width: fit-content;
   padding: 12px 16px;
-  text-decoration: none;
 }
 .sidebar a:hover {
   background-color: #f75931;
 }
 .sidebar .initials {
-  margin: 30px;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  border: 4px solid #d92f0d;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin: 30px;
+  border-radius: 50%;
+  border: 4px solid #d92f0d;
   font-size: 4rem;
 }
 .sidebar .initials:hover {
@@ -214,15 +232,15 @@ body {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
 }
 .menu button {
-  margin: 20px;
   padding: 18px 19px 20px;
-  background-color: #4d4d4d;
+  margin: 20px;
+  background-color: #c22a0c;
   border: none;
   border-radius: 10px;
 }
@@ -230,10 +248,44 @@ body {
   color: #f0e4cc;
   font-size: 3rem;
 }
+.menu button:active {
+  transform: scale(0.9);
+}
 @media (min-width: 768px) {
   .menu {
     display: none;
   }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-links a {
+  padding: 10px 13px;
+}
+.social-links a:hover {
+  background-color: inherit;
+}
+.social-links a .icon {
+  font-size: 2rem;
+}
+.social-links a .icon-discord {
+  font-size: 2.2rem;
+}
+.social-links .discord {
+  margin-top: 4px;
+}
+
+.icon-linkedin:hover {
+  color: #0a66c2;
+}
+.icon-github:hover {
+  color: #8d32ab;
+}
+.icon-discord:hover {
+  color: #5764f2;
 }
 
 .hero img {
@@ -256,7 +308,7 @@ body {
   backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 48px;
-  box-shadow: 0 0 10px 7px rgba(125, 117, 105, 0.7);
+  box-shadow: 0 0 10px 7px rgba(125, 117, 105, 0.8);
 }
 @media (min-width: 992px) {
   .hero__txt--main h1 {
@@ -291,9 +343,8 @@ body {
 .hero__txt--scroll {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: auto;
+  margin-bottom: 20px;
 }
 .hero__txt--scroll p {
   margin: 10px;
@@ -301,19 +352,19 @@ body {
   font-size: 2rem;
 }
 .hero__txt--scroll a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 70px;
+  height: 70px;
   background-color: #50483d;
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
 }
 .hero__txt--scroll a:hover {
   background-color: #d92f0d;
 }
 .hero__txt--scroll a i {
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   color: #fff6dd;
   font-size: 3rem;
 }
@@ -322,12 +373,6 @@ body {
   flex: 1;
 }
 
-#about {
-  background-color: #fcf1de;
-  border-radius: 10px;
-  color: #4d4d4d;
-  box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
-}
 #about h1, #about p {
   margin: 30px;
 }
@@ -346,10 +391,6 @@ body {
 
 .project-card {
   position: relative;
-  background-color: #fcf1de;
-  border-radius: 10px;
-  color: #4d4d4d;
-  box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
 }
 .project-card--future {
   opacity: 0.3;
@@ -370,7 +411,7 @@ body {
   position: absolute;
   right: 0;
   top: 2%;
-  color: #fcf1de;
+  color: #f0e4cc;
   padding: 0 10px;
   text-transform: uppercase;
   border-radius: 2px 0 0 2px;
@@ -379,7 +420,7 @@ body {
   z-index: 2;
 }
 .project-card .tag--future {
-  background-color: #f52f0c;
+  background-color: #d92f0d;
 }
 .project-card .content {
   padding: 20px;
@@ -389,14 +430,9 @@ body {
 }
 
 #contactform {
-  background-color: #4d4d4d;
-  margin-bottom: 120px;
-  border-radius: 10px;
-  color: #fcf1de;
-  box-shadow: inset 0 0 20px 5px rgba(28, 28, 28, 0.3);
   display: flex;
   flex-direction: column;
-  min-width: 100px;
+  margin-bottom: 120px;
 }
 @media (min-width: 1260px) {
   #contactform {
@@ -404,8 +440,11 @@ body {
   }
 }
 
+.form {
+  width: 100%;
+}
 .form p {
-  margin: 0;
+  margin: 0 20px 10px;
   text-align: center;
   font-size: 1.25rem;
 }
@@ -415,9 +454,6 @@ body {
   }
 }
 .form__info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   margin: 40px;
 }
@@ -426,7 +462,6 @@ body {
   font-size: 3rem;
 }
 .form__info p {
-  width: 100%;
   margin: 20px 0 0;
   font-size: 1.5rem;
 }
@@ -451,25 +486,25 @@ body {
     text-align: left;
   }
 }
-@media (min-width: 1260px) {
-  .form {
-    width: 150%;
-  }
-}
 
 form {
   display: flex;
   flex-direction: column;
-  margin: 40px;
 }
 form input, form textarea {
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 40px;
   background-color: #fcf1de;
   border: none;
-  font: 1.25rem "Libre Baskerville", sans-serif;
   border-radius: 4px;
+  font: 1.25rem "Libre Baskerville", sans-serif;
+  width: 200px;
   resize: none;
+}
+@media (min-width: 320px) {
+  form input, form textarea {
+    width: auto;
+  }
 }
 form input::placeholder, form textarea::placeholder {
   color: #4d4d4d;
@@ -479,38 +514,35 @@ form input:focus-visible, form textarea:focus-visible {
   border: 2px solid #d92f0d;
 }
 form button {
-  background-color: #d92f0d;
-  border: none;
   padding: 10px 20px;
-  margin-top: 20px;
-  width: 120px;
+  margin: 20px 0 40px;
+  background-color: #d92f0d;
   color: #fcf1de;
   font-size: 1.5rem;
+  border: none;
   border-radius: 4px;
   align-self: center;
-  text-align: center;
 }
 form button:hover {
   background-color: #f75931;
 }
+form button:active {
+  transform: scale(0.9);
+}
 
 .coming-soon {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  padding: 20px;
+  margin-top: 30vh;
+  font-size: 3rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background-color: #fcf1de;
-  border-radius: 10px;
-  color: #4d4d4d;
-  box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
   padding: 20px;
   margin: 45px 20px 0;
+  text-align: center;
 }
 .container__bottom {
   margin-bottom: 45px;
@@ -525,13 +557,13 @@ form button:hover {
 .image-wrapper {
   display: flex;
   align-items: center;
-  position: relative;
   width: 100%;
   max-width: 600px;
+  position: relative;
 }
 .image-wrapper img {
   width: 100%;
-  filter: sepia(50%);
+  filter: sepia(60%);
 }
 @media (min-width: 1260px) {
   .image-wrapper {
@@ -560,7 +592,7 @@ form button:hover {
   font-size: 1.25rem;
 }
 .content a:hover {
-  color: #f52f0c;
+  color: #d92f0d;
 }
 .content .score {
   margin-bottom: 30px;
