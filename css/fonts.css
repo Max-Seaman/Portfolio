@@ -42,3 +42,6 @@
 .icon-github:before {
   content: "\e902";
 }
+.icon-arrow:before {
+  content: "\ea3c";
+}

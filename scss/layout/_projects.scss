@@ -12,19 +12,22 @@
         opacity: 0.3;
     }
 
-    &--test {
+    &--hc {
         transition: 0.3s ease;
         top: 0;
 
         &:hover {
             top: -10px;
+            cursor: pointer;
         }
     }
 
     .imgtag img {
         width: 100%;
-        filter:  sepia(0.9);
+        filter: sepia(0.7);
         border-radius: 10px 10px 0 0;
+        object-fit: cover;
+        max-height: 230px;
     }
 
     .tag {
@@ -39,8 +42,12 @@
         line-height: 2;
         z-index: 2;
 
-        &--future {
+        &--hc {
             background-color: $primary__color--red;
+        }
+
+        &--future {
+            background-color: $primary__color--darkred;
         }
     }
 

@@ -6,7 +6,11 @@ a, button, strong {
     }
 }
 
-strong:hover {
-    color: $primary__color--red;
+strong a {
+    color: $primary__color--dark;
+
+    &:hover {
+        color: $primary__color--red;
+    }
 }
 

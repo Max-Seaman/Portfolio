@@ -1,15 +1,51 @@
-#about {
+#about, .skills, .interests {
     @extend %light-container;
-    
-    h1, p {
-        margin: 30px;
-    }
+    @include flex(column, null, center);
 
     h1 {
         font-size: 2.5rem;
+        margin: 30px;
+    }
+
+    p, ul li {
+        font-size: 1.25rem;
     }
 
     p {
-        font-size: 1.25rem;
+        margin: 0 30px 30px;
+    }
+}
+
+#about {
+    margin: 30px;
+}
+
+.logo {
+    @include flex(null, center, center);
+    font-size: 3rem;
+    color: $primary__color--darkred;
+    background-color: $primary__color--light;
+    border: 3px solid $primary__color--dark;
+    border-radius: 50%;
+    margin: 80px 0 10px;
+    @include size(200px, 200px);
+
+    @include mq(md) {
+        margin-top: 30px;
+    }
+
+    @include mq(xl) {
+        margin-top: auto;
+    }
+}
+
+
+.extrainfo {
+    @include flex(column);
+    gap: 60px;
+    margin: 30px;
+    
+    @include mq(xl){
+        flex-direction: row;
     }
 }

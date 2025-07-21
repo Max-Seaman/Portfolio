@@ -1,13 +1,8 @@
 .sidebar {
-    h2, .list--bordered {
-        border-top: 3px solid $primary__color--lightred;
-        border-bottom: 3px solid $primary__color--lightred;
-        @include spacing(25px, 25px);
-    }
-
     a {
         color: $primary__color;
         padding: 12px 16px;
+        border-radius: 10px;
 
         &:hover {
             background-color: $primary__color--lightred;
@@ -25,6 +20,17 @@
         &:hover {
             background-color: $primary__color--red;
         }
+    }
+
+    h2, .list--bordered {
+        border-top: 3px solid $primary__color--lightred;
+        border-bottom: 3px solid $primary__color--lightred;
+        @include spacing(25px, 25px);
+        border-radius: 0;
+    }
+
+    .list--bordered:hover {
+        border-radius: 10px;
     }
 }
 

@@ -30,7 +30,8 @@
 }
 
 .content {
-    @include size(100%, null, 600px);
+    @include size(90%, null, 600px);
+    
 
     h1 {
         @include mq(xl) {
@@ -65,5 +66,9 @@
         a {
             font-size: 2rem;
         }
+    }
+
+    .learnmore {
+        color: $primary__color--darker;
     }
 }

@@ -97,7 +97,7 @@
   }
 }
 
-.container, .coming-soon, .project-card, #about {
+.container, .coming-soon, .project-card, #about, .skills, .interests {
   background-color: #fcf1de;
   border-radius: 10px;
   color: #4d4d4d;
@@ -118,7 +118,10 @@ a:hover, button:hover, strong:hover {
   cursor: pointer;
 }
 
-strong:hover {
+strong a {
+  color: #4d4d4d;
+}
+strong a:hover {
   color: #d92f0d;
 }
 
@@ -157,6 +160,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 @media (min-width: 768px) {
   .main-content {
@@ -178,40 +182,36 @@ body {
   position: relative;
 }
 
-#about, #projects, #contactform, .container {
-  margin: 120px 20px 0;
+#projects, #contactform {
+  margin: 120px 30px 0;
 }
-@media (min-width: 768px) {
-  #about, #projects, #contactform, .container {
+
+@media (min-width: 576px) {
+  #about, #projects, #contactform, .container, .extrainfo {
     max-width: 478px;
   }
 }
 @media (min-width: 992px) {
-  #about, #projects, #contactform, .container {
+  #about, #projects, #contactform, .container, .extrainfo {
     max-width: 702px;
   }
 }
 @media (min-width: 1260px) {
-  #about, #projects, #contactform, .container {
+  #about, #projects, #contactform, .container, .extrainfo {
     max-width: 970px;
   }
 }
 
 @media (min-width: 1600px) {
-  #about, #projects, #contactform {
+  #about, #projects, #contactform, .extrainfo {
     max-width: 1310px;
   }
 }
 
-.sidebar h2, .sidebar .list--bordered {
-  border-top: 3px solid #f75931;
-  border-bottom: 3px solid #f75931;
-  padding: 25px;
-  margin: 25px;
-}
 .sidebar a {
   color: #f0e4cc;
   padding: 12px 16px;
+  border-radius: 10px;
 }
 .sidebar a:hover {
   background-color: #f75931;
@@ -229,6 +229,16 @@ body {
 }
 .sidebar .initials:hover {
   background-color: #d92f0d;
+}
+.sidebar h2, .sidebar .list--bordered {
+  border-top: 3px solid #f75931;
+  border-bottom: 3px solid #f75931;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 0;
+}
+.sidebar .list--bordered:hover {
+  border-radius: 10px;
 }
 
 .menu {
@@ -373,14 +383,60 @@ body {
   flex: 1;
 }
 
-#about h1, #about p {
+#about, .skills, .interests {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#about h1, .skills h1, .interests h1 {
+  font-size: 2.5rem;
   margin: 30px;
 }
-#about h1 {
-  font-size: 2.5rem;
-}
-#about p {
+#about p, #about ul li, .skills p, .skills ul li, .interests p, .interests ul li {
   font-size: 1.25rem;
+}
+#about p, .skills p, .interests p {
+  margin: 0 30px 30px;
+}
+
+#about {
+  margin: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #c22a0c;
+  background-color: #fcf1de;
+  border: 3px solid #4d4d4d;
+  border-radius: 50%;
+  margin: 80px 0 10px;
+  width: 200px;
+  height: 200px;
+}
+@media (min-width: 768px) {
+  .logo {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 1260px) {
+  .logo {
+    margin-top: auto;
+  }
+}
+
+.extrainfo {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 30px;
+}
+@media (min-width: 1260px) {
+  .extrainfo {
+    flex-direction: row;
+  }
 }
 
 .grid {
@@ -395,17 +451,20 @@ body {
 .project-card--future {
   opacity: 0.3;
 }
-.project-card--test {
+.project-card--hc {
   transition: 0.3s ease;
   top: 0;
 }
-.project-card--test:hover {
+.project-card--hc:hover {
   top: -10px;
+  cursor: pointer;
 }
 .project-card .imgtag img {
   width: 100%;
-  filter: sepia(0.9);
+  filter: sepia(0.7);
   border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  max-height: 230px;
 }
 .project-card .tag {
   position: absolute;
@@ -419,8 +478,11 @@ body {
   line-height: 2;
   z-index: 2;
 }
-.project-card .tag--future {
+.project-card .tag--hc {
   background-color: #d92f0d;
+}
+.project-card .tag--future {
+  background-color: #c22a0c;
 }
 .project-card .content {
   padding: 20px;
@@ -530,10 +592,20 @@ form button:active {
   transform: scale(0.9);
 }
 
+footer {
+  margin-top: auto;
+  color: #4d4d4d;
+}
+
 .coming-soon {
   padding: 20px;
-  margin-top: 30vh;
-  font-size: 3rem;
+  margin-top: auto;
+  font-size: 1.5rem;
+}
+@media (min-width: 576px) {
+  .coming-soon {
+    font-size: 3rem;
+  }
 }
 
 .container {
@@ -572,7 +644,7 @@ form button:active {
 }
 
 .content {
-  width: 100%;
+  width: 90%;
   max-width: 600px;
 }
 @media (min-width: 1260px) {
@@ -602,6 +674,9 @@ form button:active {
 }
 .content .score a {
   font-size: 2rem;
+}
+.content .learnmore {
+  color: #2e2e2e;
 }
 
 /*# sourceMappingURL=style.css.map */
