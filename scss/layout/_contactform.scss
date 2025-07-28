@@ -70,26 +70,43 @@
 form {
     @include flex(column);
 
-    input, textarea {
-        @include spacing(10px, 10px 40px);
-        background-color: $primary__color--light;
-        border: none;
-        border-radius: 4px;
-        font: 1.25rem 'Libre Baskerville', sans-serif;
-        width: 200px;
-        resize: none;
+    .input-control {
+        @include flex(column);
 
-        @include mq(xxs){
-            width: auto;
+        input, textarea {
+            @include spacing(10px, 10px 40px);
+            background-color: $primary__color--light;
+            border: none;
+            border-radius: 4px;
+            font: 1.25rem 'Libre Baskerville', sans-serif;
+            width: 200px;
+            resize: none;
+
+            @include mq(xxs){
+                width: auto;
+            }
+
+            &::placeholder {
+                color: $primary__color--dark;
+            }
+
+            &:focus-visible {
+                outline: none;
+                border: 2px solid $primary__color--light;
+            }
         }
 
-        &::placeholder {
-            color: $primary__color--dark;
+        //STYLES FOR THE CONTENT/ DISPLAYS USING JAVASCRIPT
+        &.success input, &.success textarea {
+            border: 3px solid #09c372;
         }
 
-        &:focus-visible {
-            outline: none;
-            border: 2px solid $primary__color--red;
+        &.error input, &.error textarea {
+            border: 3px solid $primary__color--red;
+        }
+
+        .error {
+            text-align: center
         }
     }
 

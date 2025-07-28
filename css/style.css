@@ -553,7 +553,11 @@ form {
   display: flex;
   flex-direction: column;
 }
-form input, form textarea {
+form .input-control {
+  display: flex;
+  flex-direction: column;
+}
+form .input-control input, form .input-control textarea {
   padding: 10px;
   margin: 10px 40px;
   background-color: #fcf1de;
@@ -564,16 +568,25 @@ form input, form textarea {
   resize: none;
 }
 @media (min-width: 320px) {
-  form input, form textarea {
+  form .input-control input, form .input-control textarea {
     width: auto;
   }
 }
-form input::placeholder, form textarea::placeholder {
+form .input-control input::placeholder, form .input-control textarea::placeholder {
   color: #4d4d4d;
 }
-form input:focus-visible, form textarea:focus-visible {
+form .input-control input:focus-visible, form .input-control textarea:focus-visible {
   outline: none;
-  border: 2px solid #d92f0d;
+  border: 2px solid #fcf1de;
+}
+form .input-control.success input, form .input-control.success textarea {
+  border: 3px solid #09c372;
+}
+form .input-control.error input, form .input-control.error textarea {
+  border: 3px solid #d92f0d;
+}
+form .input-control .error {
+  text-align: center;
 }
 form button {
   padding: 10px 20px;
