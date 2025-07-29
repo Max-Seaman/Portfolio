@@ -14,8 +14,9 @@ form.addEventListener('submit', function (event) {
 
   try {
     for (var _iterator = errorDisplay[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var control = _step.value;
-      control.classList.remove('error');
+      var _control = _step.value;
+
+      _control.classList.remove('error');
     } // Validation for each field in the array
 
   } catch (err) {
@@ -48,16 +49,64 @@ form.addEventListener('submit', function (event) {
     if (fieldName === 'email') {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!emailRegex.test(value)) {
+      if (value !== '' && !emailRegex.test(value)) {
         setError(input, 'Please enter a valid email');
         isValid = false;
       }
     }
+  } // Separate validation for the phone number as its not a required field
+
+
+  var telephoneInput = document.getElementById('telephone');
+  var telephoneValue = telephoneInput.value.trim();
+  var telephoneRegex = /^\d{11}$/;
+
+  if (telephoneValue === '') {
+    // If field is cleared, remove both error and success classes
+    var inputControl = telephoneInput.parentElement;
+
+    var _errorDisplay = inputControl.querySelector('.error');
+
+    _errorDisplay.innerText = '';
+    inputControl.classList.remove('error', 'success');
+  } else if (!telephoneRegex.test(telephoneValue)) {
+    setError(telephoneInput, 'Please enter a valid phone number');
+    isValid = false;
+  } else {
+    setSuccess(telephoneInput);
   } // Alert message when everything is correct
 
 
   if (isValid) {
     alert('Form submitted successfully!'); // will add form.submit() here when needed 
+    // Reset the form fields
+
+    form.reset(); // Remove success classes
+
+    var inputControls = form.querySelectorAll('.input-control');
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
+
+    try {
+      for (var _iterator2 = inputControls[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var control = _step2.value;
+        control.classList.remove('success');
+      }
+    } catch (err) {
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
+        }
+      } finally {
+        if (_didIteratorError2) {
+          throw _iteratorError2;
+        }
+      }
+    }
   }
 }); // Functions for the error and success messages
 

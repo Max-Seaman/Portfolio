@@ -298,18 +298,30 @@ body {
   color: #5764f2;
 }
 
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 .hero img {
   position: absolute;
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
+.hero #petal-blossom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+}
 .hero__txt {
   display: flex;
   flex-direction: column;
   height: 85%;
   text-align: center;
-  z-index: 2;
+  z-index: 5;
   margin: 30px;
   color: #fff6dd;
 }
@@ -355,6 +367,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  z-index: 5;
 }
 .hero__txt--scroll p {
   margin: 10px;

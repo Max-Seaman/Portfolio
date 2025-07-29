@@ -1,4 +1,8 @@
 .hero {
+    position: relative;      
+    height: 100vh;          
+    overflow: hidden; 
+
     img {
         position: absolute;
         object-fit: cover;
@@ -6,11 +10,19 @@
        
     }
 
+    #petal-blossom {
+        position: absolute;      
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 3;
+    }
+
     &__txt {
         @include flex(column);
         height: 85%;
         text-align: center;
-        z-index: 2;
+        z-index: 5;
         margin: 30px;
         color: $text__color--hero;
 
@@ -54,6 +66,7 @@
         &--scroll {
             @include flex(column, center);
             margin-bottom: 20px;
+            z-index: 5;
 
             p {
                 margin: 10px;

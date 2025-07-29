@@ -9,9 +9,8 @@ form.addEventListener('submit', (event) => {
         'lastname',
         'email',
         'subject',
-        'message'
+        'message',
     ]
-
     let isValid = true;
 
     // Clear error statements from before
@@ -33,22 +32,48 @@ form.addEventListener('submit', (event) => {
         }
 
         if (fieldName === 'email') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            setError(input, 'Please enter a valid email');
-            isValid = false;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value !== '' && !emailRegex.test(value)) {
+                setError(input, 'Please enter a valid email');
+                isValid = false;
             }
         }
+    }
+
+    // Separate validation for the phone number as its not a required field
+    const telephoneInput = document.getElementById('telephone');
+    const telephoneValue = telephoneInput.value.trim();
+    const telephoneRegex = /^\d{11}$/;
+    if (telephoneValue === '') {
+        // If field is cleared, remove both error and success classes
+        const inputControl = telephoneInput.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+        
+        errorDisplay.innerText = '';
+        inputControl.classList.remove('error', 'success');
+    } else if (!telephoneRegex.test(telephoneValue)) {
+        setError(telephoneInput, 'Please enter a valid phone number');
+        isValid = false;
+    } else {
+        setSuccess(telephoneInput);
     }
 
     // Alert message when everything is correct
     if (isValid) {
         alert('Form submitted successfully!');
         // will add form.submit() here when needed 
+
+        // Reset the form fields
+        form.reset();
+
+        // Remove success classes
+        const inputControls = form.querySelectorAll('.input-control');
+        for (const control of inputControls) {
+            control.classList.remove('success');
+        }
     }
 
 });
-
 
 // Functions for the error and success messages
 function setError(input, message) {
