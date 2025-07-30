@@ -56,12 +56,13 @@ class Petal {
         // 3D-like rotation
         const flutter = Math.cos(this.rotation * Math.PI / 90);  //last number alters the speed of 'flip', the lower the number the higher the speed
         context.scale(flutter, 1); // Horizontal flip and squish/stretch
-        //
+        //Draw the petal
         context.drawImage(petalImage, -this.size / 2, -this.size / 2, this.size, this.size);
         context.restore();
     }
 }
 
+//When the image is loaded
 petalImage.onload = () => {
     //Empty array for the petals
     const petals = [];
@@ -72,17 +73,19 @@ petalImage.onload = () => {
     }
 
     function animate() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        petals.forEach(petal => {
+        //Make sure they don't leave any trails behind
+        context.clearRect(0, 0, canvas.width, canvas.height);  //Each frame is drawn fresh, allowing objects like petals to move smoothly without leaving marks behind
+        for (let petal of petals) {
             petal.update();
             petal.draw(context);
-        });
-        requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate); //Ensures smooth animation
     }
 
     animate();  // only start after image loads
 }
 
+//Error check to mkae sure the image loads
 petalImage.onerror = () => {
-  console.error('Failed to load petal image. - blossom.js:87');
+  console.error('Failed to load petal image. - blossom.js:90');
 };

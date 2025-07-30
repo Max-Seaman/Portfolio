@@ -27,6 +27,7 @@
         color: $text__color--hero;
 
         &--main {
+            position: relative;
             background-color: rgba(125, 117, 105, 0.7);
             backdrop-filter: blur(10px);
             padding: 30px;
@@ -35,6 +36,8 @@
             
 
             h1 {
+                visibility: hidden;
+
                 @include mq(lg) {
                     font-size: 3rem;
                 }

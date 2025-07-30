@@ -326,11 +326,15 @@ body {
   color: #fff6dd;
 }
 .hero__txt--main {
+  position: relative;
   background-color: rgba(125, 117, 105, 0.7);
   backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 48px;
   box-shadow: 0 0 10px 7px rgba(125, 117, 105, 0.8);
+}
+.hero__txt--main h1 {
+  visibility: hidden;
 }
 @media (min-width: 992px) {
   .hero__txt--main h1 {

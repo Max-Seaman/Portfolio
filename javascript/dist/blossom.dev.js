@@ -75,7 +75,7 @@ function () {
       var flutter = Math.cos(this.rotation * Math.PI / 90); //last number alters the speed of 'flip', the lower the number the higher the speed
 
       context.scale(flutter, 1); // Horizontal flip and squish/stretch
-      //
+      //Draw the petal
 
       context.drawImage(petalImage, -this.size / 2, -this.size / 2, this.size, this.size);
       context.restore();
@@ -83,7 +83,8 @@ function () {
   }]);
 
   return Petal;
-}();
+}(); //When the image is loaded
+
 
 petalImage.onload = function () {
   //Empty array for the petals
@@ -94,18 +95,24 @@ petalImage.onload = function () {
   }
 
   function animate() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    petals.forEach(function (petal) {
+    //Make sure they don't leave any trails behind
+    context.clearRect(0, 0, canvas.width, canvas.height); //Each frame is drawn fresh, allowing objects like petals to move smoothly without leaving marks behind
+
+    for (var _i = 0, _petals = petals; _i < _petals.length; _i++) {
+      var petal = _petals[_i];
       petal.update();
       petal.draw(context);
-    });
-    requestAnimationFrame(animate);
+    }
+
+    ;
+    requestAnimationFrame(animate); //Ensures smooth animation
   }
 
   animate(); // only start after image loads
-};
+}; //Error check to mkae sure the image loads
+
 
 petalImage.onerror = function () {
-  console.error('Failed to load petal image. - blossom.js:87');
+  console.error('Failed to load petal image. - blossom.js:90');
 };
 //# sourceMappingURL=blossom.dev.js.map
