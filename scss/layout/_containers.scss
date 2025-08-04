@@ -10,37 +10,56 @@ body {
 
 //SIDEBAR
 
-.sidebar {
-    display: none;
+#sidebar {
+    left: -200px;
     position: fixed;
+    @include flex(column, center);
     @include size(200px, 100%);
-    padding-top: 20px;
+    padding-top: 30px;
     color: $primary__color;
+    background-color: $primary__color--dark;
+    transition: left 1s ease;
+    z-index: 10;
+
+    &.open {
+        left: 0; // slide in 
+    }
 
     @include mq(md) {
-        @include flex(column, center);
-        background-color: $primary__color--dark;
+        left: 0;
+        transition: none;
     }
 
     @include mq(xxxl) {
         width: 300px;
-    }
-  }
+    }  
+}
 
 //MAIN
 
-.main-content {
+#main-content {
     @include flex(column, center, center);
     min-height: 100vh;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    will-change: opacity; // helps smooth GPU rendering
+
+    &.fade-out {
+        opacity: 0;
+    }
+
+    &.fade-in {
+        opacity: 1;
+    }
 
     @include mq(md) {
-        margin-left: 200px; /* Same as sidebar width */
+        margin-left: 200px; // Same as sidebar width 
     }
 
     @include mq(xxxl) {
-        margin-left: 300px; /* Same as sidebar width */
+        margin-left: 300px; // Same as sidebar width 
     }
-  }
+}
 
 //HERO IMG 
 
@@ -58,7 +77,7 @@ body {
 
 //CONTAINER MQ
 
-#about, #projects, #contactform, .container, .extrainfo {
+#about, #projects, #contactform, .container, #extrainfo {
 
     @include mq(sm) {
         max-width: 478px;
@@ -73,7 +92,7 @@ body {
     }
 }
 
-#about, #projects, #contactform, .extrainfo {
+#about, #projects, #contactform, #extrainfo {
     @include mq(xxl) {
         max-width: 1310px;
     } 

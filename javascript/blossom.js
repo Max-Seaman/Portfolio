@@ -15,7 +15,7 @@ window.addEventListener('resize', resizeCanvas);
 
 // Load image
 const petalImage = new Image();
-petalImage.src = 'javascript/img/petal4.png';
+petalImage.src = 'javascript/img/petal.png';
 
 class Petal {
     constructor() {
@@ -25,7 +25,7 @@ class Petal {
         //Petal size
         this.size = Math.random() * 35 + 25;  //size in pixels
         //Fall speed
-        this.speedX = -(Math.random() + 0.5);  //negative for moving left
+        this.speedX = -(Math.random() + 0.2);  //negative for moving left
         this.speedY = Math.random() + 0.5;  //positive for moving down
         //Rotation of petal while falling
         this.rotation = Math.random() * 360;

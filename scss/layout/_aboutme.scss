@@ -40,7 +40,7 @@
 }
 
 
-.extrainfo {
+#extrainfo {
     @include flex(column);
     gap: 60px;
     margin: 30px;

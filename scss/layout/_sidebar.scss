@@ -1,11 +1,14 @@
-.sidebar {
+#sidebar {
     a {
         color: $primary__color;
         padding: 12px 16px;
+        margin: 5px 0;
         border-radius: 10px;
+        transition: background-color 0.6s ease;
 
         &:hover {
             background-color: $primary__color--lightred;
+            
         }
     }
 
@@ -34,25 +37,43 @@
     }
 }
 
-.menu {
+#menu {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    top: 20px;
+    left: 0px;
+    z-index: 20;
+    background-color: $primary__color--darkred;
+    @include flex(column, null, space-between);
+    @include size(35px, 30px);
+    padding: 17px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: left 1s ease;
 
-    button {
-        @include spacing(18px 19px 20px, 20px);
-        background-color: $primary__color--darkred;
-        border: none;
-        border-radius: 10px;
+    span {
+        @include size(100%, 5px);
+        background-color: $primary__color;
+        transition: all 0.3s ease;
+    }
 
-        i {
-            color: $primary__color;
-            font-size: 3rem;
-        }
+    &.open {
+        left: 200px;
+        span {
+            display: block;
+            transform-origin: center center;
 
-        &:active {
-            transform: scale(0.9);
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(9px, 9px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(9px, -9px);
+            }
         }
     }
 
@@ -61,14 +82,14 @@
     }
 }
 
-.social-links {
+#social-links {
     @include flex(null, center, center);
     
     a {
         padding: 10px 13px;
 
         &:hover {
-            background-color: inherit;
+            background-color: transparent;
         }
 
         .icon {
@@ -86,6 +107,7 @@
 }
 
 .icon {
+    transition: color 0.6s ease;
     &-linkedin:hover {
         color: $linkedin;
     }

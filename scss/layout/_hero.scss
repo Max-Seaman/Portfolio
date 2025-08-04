@@ -36,7 +36,6 @@
             
 
             h1 {
-                visibility: hidden;
 
                 @include mq(lg) {
                     font-size: 3rem;
@@ -52,6 +51,7 @@
             }
 
             h2 {
+
                 @include mq(lg) {
                     font-size: 1.8rem;
                 }
@@ -82,6 +82,7 @@
                 @include size(70px, 70px);
                 background-color: $image__hero--scroll;
                 border-radius: 50%;
+                transition: background-color 0.6s ease;
 
                 &:hover {
                     background-color: $primary__color--red;
