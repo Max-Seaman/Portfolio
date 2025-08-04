@@ -144,7 +144,7 @@ body {
   padding-top: 30px;
   color: #f0e4cc;
   background-color: #4d4d4d;
-  transition: left 1s ease;
+  transition: left 0.6s ease;
   z-index: 10;
 }
 #sidebar.open {
@@ -229,7 +229,7 @@ body {
   padding: 12px 16px;
   margin: 5px 0;
   border-radius: 10px;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.4s ease;
 }
 #sidebar a:hover {
   background-color: #f75931;
@@ -274,7 +274,7 @@ body {
   border: none;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
-  transition: left 1s ease;
+  transition: left 0.6s ease;
 }
 #menu span {
   width: 100%;
@@ -326,7 +326,7 @@ body {
 }
 
 .icon {
-  transition: color 0.6s ease;
+  transition: color 0.4s ease;
 }
 .icon-linkedin:hover {
   color: #0a66c2;
@@ -423,7 +423,7 @@ body {
   height: 70px;
   background-color: #50483d;
   border-radius: 50%;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.4s ease;
 }
 .hero__txt--scroll a:hover {
   background-color: #d92f0d;
@@ -688,7 +688,7 @@ form button {
   border: none;
   border-radius: 4px;
   align-self: center;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.4s ease;
 }
 form button:hover {
   background-color: #f75931;

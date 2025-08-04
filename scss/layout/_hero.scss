@@ -82,7 +82,7 @@
                 @include size(70px, 70px);
                 background-color: $image__hero--scroll;
                 border-radius: 50%;
-                transition: background-color 0.6s ease;
+                transition: background-color 0.4s ease;
 
                 &:hover {
                     background-color: $primary__color--red;

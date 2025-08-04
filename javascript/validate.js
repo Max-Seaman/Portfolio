@@ -43,7 +43,7 @@ form.addEventListener('submit', (event) => {
     // Separate validation for the phone number as its not a required field
     const telephoneInput = document.getElementById('telephone');
     const telephoneValue = telephoneInput.value.trim();
-    const telephoneRegex = /^\d{11}$/;
+    const telephoneRegex = /^\+?\d(?:\d|\s){6,15}$/;
     if (telephoneValue === '') {
         // If field is cleared, remove both error and success classes
         const inputControl = telephoneInput.parentElement;
