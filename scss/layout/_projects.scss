@@ -3,9 +3,11 @@
     grid-template-columns: repeat(6, minmax(10px, 1fr));
     grid-gap: 30px;
     position: relative; 
+    align-items: stretch;
 }
 
 .project-card {
+    @include flex(column);
     position: relative;
     @extend %light-container;
     
@@ -13,7 +15,7 @@
         opacity: 0.3;
     }
 
-    &--hc {
+    &--complete {
         transition: 0.3s ease;
         top: 0;
 
@@ -31,6 +33,12 @@
         max-height: 230px;
     }
 
+    &--2 {
+        .imgtag img {
+            filter: none;
+        }
+    }
+
     .tag {
         position: absolute;
         right: 0;
@@ -43,7 +51,7 @@
         line-height: 2;
         z-index: 2;
 
-        &--hc {
+        &--complete {
             background-color: $primary__color--red;
         }
 
@@ -54,9 +62,15 @@
 
     .content {
         padding: 20px;
+        flex-grow: 1;
+        @include flex(column);
 
         h2 {
             margin-top: 0;
+        }
+
+        p {
+            margin: auto 0 10px;
         }
     }
 }

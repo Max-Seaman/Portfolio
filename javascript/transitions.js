@@ -45,16 +45,13 @@ for (let i = 0; i < links.length; i++) {
 
 const mainContent = document.getElementById('main-content');
 // Select all links that lead to other pages
-// This includes links that start with "html/", "../", or end with ".html"
-const linksToPages = document.querySelectorAll(
-    'a[href^="html/"], a[href^="../"], a[href$=".html"]'
-);
+const linksToPages = document.querySelectorAll('a[href^="/"]');
 console.log(linksToPages);
 
 // Filter links that lead to anchors within the same page
 const linksToAnchor = [];
 for (const link of linksToPages) {
-    if (link.href.includes('.html#')) {
+    if (link.getAttribute('href').includes('#')) {
         linksToAnchor.push(link);
     }
 }
@@ -80,9 +77,29 @@ window.addEventListener('load', () => {
 
 for (const link of linksToPages) {
     link.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        const target = this.getAttribute('href');
+        const targetHref = this.getAttribute('href');
+        const [targetPage, targetHash] = targetHref.split('#');
+        const currentPage = window.location.pathname;
 
+        // Normalize homepage paths
+        if (currentPage === '/index.php') currentPage = '/';
+        if (targetPage === '/index.php') targetPage = '/';
+
+        // If already on this page
+        if (targetPage === currentPage) {
+            event.preventDefault();
+            if (targetHash) {
+                // Scroll to hash
+                smoothScroll('#' + targetHash);
+            } else {
+                // Scroll to top if no hash
+                smoothScroll('body'); // or '#main-content'
+            }
+            return; // skip fade-out and reload
+        }
+
+        // Prevent default link behavior
+        event.preventDefault();
         // Start the fade-out transition
         mainContent.classList.remove('fade-in');
         mainContent.classList.add('fade-out');
@@ -91,19 +108,14 @@ for (const link of linksToPages) {
         menu.classList.remove('open');
         sidebar.classList.remove('open');
         
-        // If the link is to an anchor within the same page
-        if (linksToAnchor.includes(this)) {
-            // split the target to get the page and hash
-            const [page, hash] = target.split('#');
+        if (targetHash) {
             setTimeout(() => {
-                // Store the hash for the next page to read
-                sessionStorage.setItem('scrollToHash', '#' + hash);
-                window.location.href = page; // navigate without hash
+                sessionStorage.setItem('scrollToHash', '#' + targetHash);
+                window.location.href = targetPage;
             }, 600);
-            return;
         } else {
             setTimeout(() => {
-                window.location.href = target;
+                window.location.href = targetHref;
             }, 600);
         }
     });

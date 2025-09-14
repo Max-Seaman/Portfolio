@@ -3,6 +3,10 @@
     @include flex(column);
     @extend %dark-container;
     margin-bottom: 120px;
+}
+
+.form-container {
+    @include flex(column);
 
     @include mq(xl) {
         flex-direction: row;
@@ -97,16 +101,9 @@ form {
         }
 
         //STYLES FOR THE CONTENT/ DISPLAYS USING JAVASCRIPT
-        &.success input, &.success textarea {
-            border: 3px solid #09c372;
-        }
 
         &.error input, &.error textarea {
             border: 3px solid $primary__color--red;
-        }
-
-        .error {
-            text-align: center
         }
     }
 
@@ -128,4 +125,31 @@ form {
             transform: scale(0.9);
         }
     }
+}
+
+// Success & error message
+.form-success, .form-errors {
+    @include flex(null, nul, space-between);
+    border-radius: 10px;
+    margin: 20px 20px 0;
+    padding: 20px 10px;
+    color: $primary__color--light;
+    font-size: 1.25rem;
+
+    p {
+        margin: auto 0;
+    }
+}
+
+.form-success {
+    background-color: #2ecc71
+}
+
+.form-errors {
+    background-color: #d24d57;
+}
+
+.closemessage {
+    cursor: pointer;
+    font-size: 2rem;
 }

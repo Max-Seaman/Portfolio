@@ -1,95 +1,49 @@
-const form = document.getElementById('form');
+function validateFormJS() {
+    const form = document.getElementById('form');
+    if (!form) return false;
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    
-    const form = event.target;
-    const requiredFields = [
-        'firstname',
-        'lastname',
-        'email',
-        'subject',
-        'message',
-    ]
     let isValid = true;
+    const requiredFields = ['firstname','lastname', 'email', 'subject', 'message'];
 
-    // Clear error statements from before
-    const errorDisplay = form.querySelectorAll('.input-control.error');
-    for (const control of errorDisplay) {
+    // Clear previous error states
+    form.querySelectorAll('.input-control').forEach(control => {
         control.classList.remove('error');
-    }
-      
-    // Validation for each field in the array
-    for (let fieldName of requiredFields) {
+    });
+
+    // Validate required fields
+    requiredFields.forEach(fieldName => {
         const input = form.elements[fieldName];
         const value = input.value.trim();
 
         if (value === '') {
-            setError(input, `${input.placeholder.replace(/\*$/, '')} is required.`);
+            setError(input);
             isValid = false;
-        } else {
-            setSuccess(input);
         }
 
-        if (fieldName === 'email') {
+        if (fieldName === 'email' && value !== '') {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (value !== '' && !emailRegex.test(value)) {
-                setError(input, 'Please enter a valid email');
+            if (!emailRegex.test(value)) {
+                setError(input);
                 isValid = false;
             }
         }
-    }
+    });
 
-    // Separate validation for the phone number as its not a required field
-    const telephoneInput = document.getElementById('telephone');
-    const telephoneValue = telephoneInput.value.trim();
-    const telephoneRegex = /^\+?\d(?:\d|\s){6,15}$/;
-    if (telephoneValue === '') {
-        // If field is cleared, remove both error and success classes
-        const inputControl = telephoneInput.parentElement;
-        const errorDisplay = inputControl.querySelector('.error');
-        
-        errorDisplay.innerText = '';
-        inputControl.classList.remove('error', 'success');
-    } else if (!telephoneRegex.test(telephoneValue)) {
-        setError(telephoneInput, 'Please enter a valid phone number');
-        isValid = false;
-    } else {
-        setSuccess(telephoneInput);
-    }
-
-    // Alert message when everything is correct
-    if (isValid) {
-        alert('Form submitted successfully!');
-        // will add form.submit() here when needed 
-
-        // Reset the form fields
-        form.reset();
-
-        // Remove success classes
-        const inputControls = form.querySelectorAll('.input-control');
-        for (const control of inputControls) {
-            control.classList.remove('success');
+    // Optional telephone field
+    const telephoneInput = form.elements['telephone'];
+    if (telephoneInput && telephoneInput.value.trim() !== '') {
+        const phoneRegex = /^\+?\d(?:\d|\s){6,15}$/;
+        if (!phoneRegex.test(telephoneInput.value.trim())) {
+            setError(telephoneInput);
+            isValid = false;
         }
     }
 
-});
-
-// Functions for the error and success messages
-function setError(input, message) {
-    const inputControl = input.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = message;
-    inputControl.classList.remove('success');
-    inputControl.classList.add('error');
+    return isValid; // crucial for onsubmit
 }
 
-function setSuccess(input) {
-    const inputControl = input.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    inputControl.classList.remove('error');
-    inputControl.classList.add('success');
+// Functions for the error state
+function setError(input) {
+    const inputControl = input.closest('.input-control');
+    if (inputControl) inputControl.classList.add('error');
 }

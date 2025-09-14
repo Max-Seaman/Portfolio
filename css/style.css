@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 .project-card--1 {
   grid-column: span 6;
@@ -97,14 +98,14 @@
   }
 }
 
-.container, .coming-soon, .project-card, #about, .skills, .interests {
+.container, .project-card, #about, .skills, .interests {
   background-color: #fcf1de;
   border-radius: 10px;
   color: #4d4d4d;
   box-shadow: 0 0 20px 5px rgba(212, 197, 174, 0.8);
 }
 
-#contactform {
+.coding-examples .example-blossom, .coding-examples .example-preload, .coding-examples .example-database, #contactform {
   background-color: #4d4d4d;
   border-radius: 10px;
   color: #fcf1de;
@@ -499,19 +500,22 @@ body {
   grid-template-columns: repeat(6, minmax(10px, 1fr));
   grid-gap: 30px;
   position: relative;
+  align-items: stretch;
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 .project-card--future {
   opacity: 0.3;
 }
-.project-card--hc {
+.project-card--complete {
   transition: 0.3s ease;
   top: 0;
 }
-.project-card--hc:hover {
+.project-card--complete:hover {
   top: -10px;
   cursor: pointer;
 }
@@ -521,6 +525,9 @@ body {
   border-radius: 10px 10px 0 0;
   object-fit: cover;
   max-height: 230px;
+}
+.project-card--2 .imgtag img {
+  filter: none;
 }
 .project-card .tag {
   position: absolute;
@@ -534,7 +541,7 @@ body {
   line-height: 2;
   z-index: 2;
 }
-.project-card .tag--hc {
+.project-card .tag--complete {
   background-color: #d92f0d;
 }
 .project-card .tag--future {
@@ -542,9 +549,15 @@ body {
 }
 .project-card .content {
   padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .project-card .content h2 {
   margin-top: 0;
+}
+.project-card .content p {
+  margin: auto 0 10px;
 }
 
 .project-expanded {
@@ -587,8 +600,13 @@ body {
   flex-direction: column;
   margin-bottom: 120px;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
 @media (min-width: 1260px) {
-  #contactform {
+  .form-container {
     flex-direction: row;
   }
 }
@@ -670,14 +688,8 @@ form .input-control input:focus-visible, form .input-control textarea:focus-visi
   outline: none;
   border: 2px solid #fcf1de;
 }
-form .input-control.success input, form .input-control.success textarea {
-  border: 3px solid #09c372;
-}
 form .input-control.error input, form .input-control.error textarea {
   border: 3px solid #d92f0d;
-}
-form .input-control .error {
-  text-align: center;
 }
 form button {
   padding: 10px 20px;
@@ -697,20 +709,108 @@ form button:active {
   transform: scale(0.9);
 }
 
+.form-success, .form-errors {
+  display: flex;
+  align-items: nul;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 20px 20px 0;
+  padding: 20px 10px;
+  color: #fcf1de;
+  font-size: 1.25rem;
+}
+.form-success p, .form-errors p {
+  margin: auto 0;
+}
+
+.form-success {
+  background-color: #2ecc71;
+}
+
+.form-errors {
+  background-color: #d24d57;
+}
+
+.closemessage {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
 footer {
   margin-top: auto;
   color: #4d4d4d;
+  text-align: center;
 }
 
-.coming-soon {
-  padding: 20px;
-  margin-top: auto;
-  font-size: 1.5rem;
+.coding-examples {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 90%;
+  padding-bottom: 40px;
+}
+.coding-examples h1 {
+  color: #4d4d4d;
+  margin: 65px 0 5px;
+  font-size: 2.5rem;
 }
 @media (min-width: 576px) {
-  .coming-soon {
-    font-size: 3rem;
+  .coding-examples h1 {
+    font-size: 4rem;
   }
+}
+.coding-examples p .link {
+  color: #f75931;
+}
+.coding-examples .example-blossom, .coding-examples .example-preload, .coding-examples .example-database {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+@media (min-width: 1600px) {
+  .coding-examples .example-blossom, .coding-examples .example-preload, .coding-examples .example-database {
+    width: 1300px;
+  }
+}
+.coding-examples .example-blossom h2, .coding-examples .example-preload h2, .coding-examples .example-database h2 {
+  margin: 0;
+}
+@media (min-width: 576px) {
+  .coding-examples .example-blossom h2, .coding-examples .example-preload h2, .coding-examples .example-database h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1600px) {
+  .coding-examples .example-blossom h2, .coding-examples .example-preload h2, .coding-examples .example-database h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Force overrides for Prism code blocks */
+pre[class*=language-],
+pre[class*=language-] code,
+pre[class*=language-] code * {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+pre[class*=language-] {
+  width: 80% !important; /* shrink block */
+  max-width: 100% !important; /* don’t overflow */
+  margin: 1rem auto !important;
+  padding: 1rem !important;
+  background: #fcf1de !important; /* your background */
+  color: #4d4d4d !important; /* default text */
+  box-shadow: none !important;
+  overflow-x: auto !important;
+  border-radius: 10px !important;
 }
 
 .container {
