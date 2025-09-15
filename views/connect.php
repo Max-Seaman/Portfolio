@@ -129,7 +129,7 @@ function sendEmail($firstname, $lastname, $email, $telephone, $subject, $message
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body = "Name: " . $firstname . " " . $lastname . "<br>" . "Email: " . $email . "<br>" . "Telephone: " . $telephone . "<br>" . "Subject: " . $subject . "<br>" . "Message" . $message;
+        $mail->Body = "Name: " . $firstname . " " . $lastname . "<br>" . "Email: " . $email . "<br>" . "Telephone: " . $telephone . "<br>" . "Subject: " . $subject . "<br>" . "Message: " . $message;
 
         $mail->send();
         return True;
