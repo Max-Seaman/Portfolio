@@ -11,7 +11,7 @@ require 'views/layout/sidebar.php';
             <div class="coding-examples">
                 <h1>< Coding Examples ></h1>
 
-                <div class="example-database">
+                <div class="example">
                     <h2>Netmatters Homepage Recreation</h2>
                     <h3>PHP Database Connection</h3>
                     <p>From my recreaion of the <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" class="link">Netmatters</a> website project. Made during my time on the Netmatters SCS course.</p>
@@ -75,7 +75,7 @@ function storeContactForm($name, $company, $email, $phone, $message, $marketing)
                     <p>This function is called in the contact form page to store the submitted form data into the database. It uses a prepared statement to prevent SQL injection attacks and ensure data integrity.</p>
                 </div>
 
-                <div class="example-blossom">
+                <div class="example">
                     <h2>My Portfolio</h2>
                     <h3>Javascript Petal Blossom</h3>
                     <p>From the hero image on the main page of my Portfolio. Researched and made myself to add an immediate eye-catching piece for viewers as soon as my Portfolio is opened. Made during my time on the Netmatters SCS course.</p>
@@ -158,7 +158,7 @@ petalImage.onload = () => {
                     <p>This code handles the animation loop. It continuously updates and redraws each petal on the canvas, creating a smooth falling effect. The canvas is cleared each frame to prevent trails, and requestAnimationFrame is used for efficient animation timing.</p>
                 </div> 
                 
-                <div class="example-preload">
+                <div class="example">
                     <h2>Javascript Image Generator</h2>
                     <h3>Preloading Next Image</h3>
                     <p>From my <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" class="link">JS Array</a> project. Made during my time on the Netmatters SCS course.</p>
@@ -205,6 +205,57 @@ async function loadRandomImage() {
 }
                     </code></pre>
                     
+                </div>
+
+                <div class="example">
+                    <h2>Laravel Admin Management System</h2>
+                    <h3>Company Creation with Validation & Logo Upload</h3>
+                    <p>From my <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" class="link">Laravel Company Management</a> project, built as part of the Netmatters SCS course. This function handles new company creation — validating inputs, managing image uploads, and ensuring each company entry has a stored or default logo.</p>
+                    <pre><code class="language-php">
+public function store(Request $request)
+{
+    //validation
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'website' => 'nullable|url',
+        'logo' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048|dimensions:min_width=100,min_height=100',
+    ]);
+
+    // Handle logo upload or default
+    if ($request->hasFile('logo')) {
+        $logo = $request->file('logo');
+
+        // Generate unique file name
+        $filename = time() . '_' . $logo->getClientOriginalName();
+
+        // Move the file to public/img folder
+        $logo->move(public_path('img'), $filename);
+
+        $validated['logo'] = 'img/' . $filename;
+    } else {
+        // Default logo in public/img
+        $validated['logo'] = 'img/default-company.png';
+    }
+
+    //create
+    Company::create($validated);
+
+    return redirect('/companies');
+}
+                    </code></pre>
+                    <p>  
+                        This begins by validating incoming form data to ensure each field meets the required format and type — for example, enforcing a valid email and checking that uploaded logos meet minimum size and format requirements.
+                    </p>
+                    <p>
+                        If a logo is provided, the function renames the file with a timestamp to prevent filename conflicts, then moves it into the public/img directory so it can be accessed directly by the web server.
+                    </p>
+                    <p>
+                        If no logo is uploaded, a default image path is assigned to maintain visual consistency across company records.
+                    </p>
+                    <p>    
+                        Finally, the validated data is passed to Laravel&apos;s Eloquent ORM, which automatically inserts the new record into the database and redirects the user to the company listing page, where the application retrieves and displays the updated list including the newly created company.
+                    </p>
                 </div>
             </div>
 

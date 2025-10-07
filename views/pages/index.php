@@ -46,16 +46,16 @@ require 'views/layout/sidebar.php';
                             <p>View Project <i class="icon icon-arrow"></i></p>
                         </div>
                     </a>
-                    <div class="project-card project-card--3 project-card--future">
+                    <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" target="_blank" class="project-card project-card--3 project-card--complete">
                         <div class="imgtag">
-                            <img src="img/project-stock.jpg" alt="code on computer screen">
-                            <p class="tag tag--future">Future</p>
+                            <img src="img/laravel-project.png" alt="screenshot of my laravel project website">
+                            <p class="tag tag--complete">PHP(LARAVEL)</p>
                         </div>
                         <div class="content">
-                            <h2>Future Project</h2>
-                            <p>Coming Soon</p>
+                            <h2>Laravel Admin Project</h2>
+                            <p>View Project <i class="icon icon-arrow"></i></p>
                         </div>
-                    </div>
+                    </a>
                     <div class="project-card project-card--4 project-card--future">
                         <div class="imgtag">
                             <img src="img/project-stock.jpg" alt="code on computer screen">
