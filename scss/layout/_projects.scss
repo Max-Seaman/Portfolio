@@ -55,7 +55,7 @@
         text-transform: uppercase;
         border-radius: 2px 0 0 2px;
         font-size: 1rem;
-        line-height: 2;
+        line-height: $base-line-height;
         z-index: 2;
 
         &--complete {
@@ -71,13 +71,18 @@
         padding: 20px;
         flex-grow: 1;
         @include flex(column);
+        gap: 10px;
 
         h2 {
             margin-top: 0;
         }
 
-        p {
+        a {
             margin: auto 0 10px;
+        }
+
+        span {
+            font-size: 1.25rem;
         }
     }
 }
@@ -119,6 +124,19 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0s ease;
+}
+
+.project_heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: $primary__color--dark
+}
+
+.project_description {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: $primary__color--dark;
 }
 
 

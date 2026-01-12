@@ -80,9 +80,10 @@ form {
         input, textarea {
             @include spacing(10px, 10px 40px);
             background-color: $primary__color--light;
-            border: none;
+            border: 2px solid transparent;
+            box-sizing: border-box;
             border-radius: 4px;
-            font: 1.25rem 'Libre Baskerville', sans-serif;
+            font: 1.25rem 'Roboto', sans-serif;
             width: 200px;
             resize: none;
 

@@ -1,6 +1,8 @@
-#about, .skills, .interests {
+#about, #skills {
     @extend %light-container;
     @include flex(column, null, center);
+    margin: 30px;
+    width: 100%;
 
     h1 {
         font-size: 2.5rem;
@@ -16,10 +18,6 @@
     }
 }
 
-#about {
-    margin: 30px;
-}
-
 .logo {
     @include flex(null, center, center);
     font-size: 3rem;
@@ -27,25 +25,31 @@
     background-color: $primary__color--light;
     border: 3px solid $primary__color--dark;
     border-radius: 50%;
-    margin: 80px 0 10px;
+    margin: 60px 0 10px;
     @include size(200px, 200px);
-
-    @include mq(md) {
-        margin-top: 30px;
-    }
-
-    @include mq(xl) {
-        margin-top: auto;
-    }
 }
 
+.skills__icons {
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
 
-#extrainfo {
-    @include flex(column);
-    gap: 60px;
-    margin: 30px;
-    
-    @include mq(xl){
-        flex-direction: row;
+    .skills__code {
+        @include flex(column, center, center);
+        gap: 10px;
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;
+
+        .icon {
+            font-size: 4rem;
+            color: $primary__color--dark;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary__color--red;
+            }
+        }
     }
 }

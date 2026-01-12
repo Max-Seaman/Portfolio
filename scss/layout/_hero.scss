@@ -29,11 +29,11 @@
         &--main {
             position: relative;
             background-color: rgba(125, 117, 105, 0.7);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 48px;
             box-shadow:  0 0 10px 7px rgba(125, 117, 105, 0.8);
-            
+            backdrop-filter: blur(10px);
 
             h1 {
 
@@ -76,6 +76,33 @@
                 color: $image__hero--scroll;
                 font-size: 2rem;
             }
+
+            a {
+                @include flex(null, center, center);
+                @include size(70px, 70px);
+                background-color: $image__hero--scroll;
+                border-radius: 50%;
+                transition: background-color 0.4s ease;
+
+                &:hover {
+                    background-color: $primary__color--red;
+                }
+
+                i {
+                    padding-bottom: 8px;
+                    color: $text__color--hero;
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        &--up {
+            position: fixed;
+            @include flex(column, center);
+            right: 20px;
+            bottom: 20px;
+            margin: 0;
+            z-index: 9999;
 
             a {
                 @include flex(null, center, center);

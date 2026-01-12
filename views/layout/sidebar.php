@@ -1,9 +1,8 @@
 <body>
     <div id="sidebar">
         <a href="/" class="initials">MS</a>
-        <h2>Menu</h2>
         <a href="about-me">About Me</a>
-        <a href="/#projects">My Portfolio</a>
+        <a href="/#projects">My Projects</a>
         <a href="coding-examples">Coding Examples</a>
         <a href="scs-scheme">SCS Scheme</a>
         <a href="/#contactform" class="list--bordered">Contact Me</a>

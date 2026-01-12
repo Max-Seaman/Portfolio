@@ -25,37 +25,42 @@ require 'views/layout/sidebar.php';
             </div>
 
             <div id="projects">
+                <h2 class="project_heading">My Projects</h2>
+                <p class="project_description">Here are some of my completed and ongoing projects. Click on any project to view it in detail.</p>
                 <div class="grid">
-                    <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" target="_blank" class="project-card project-card--1 project-card--complete">
+                    <div class="project-card project-card--1 project-card--complete">
                         <div class="imgtag">
                             <img src="img/nm-homepage.jpg" alt="image of netmatters homepage">
                             <p class="tag tag--complete">HTML/CSS</p>
                         </div>
                         <div class="content">
                             <h2>Netmatters Homepage</h2>
-                            <p>View Project <i class="icon icon-arrow"></i></p>
+                            <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
+                            <a href="https://github.com/Max-Seaman/Netmatters-Homepage" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
-                    </a>
-                    <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" target="_blank" class="project-card project-card--2 project-card--complete">
+                    </div>
+                    <div class="project-card project-card--2 project-card--complete">
                         <div class="imgtag">
                             <img src="img/js-array.jpg" alt="screenshot of my javascript array website">
                             <p class="tag tag--complete">JAVASCRIPT</p>
                         </div>
                         <div class="content">
                             <h2>Javascript Array -<br>Random Image Generator</h2>
-                            <p>View Project <i class="icon icon-arrow"></i></p>
+                            <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
+                            <a href="https://github.com/Max-Seaman/JS-Array" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
-                    </a>
-                    <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" target="_blank" class="project-card project-card--3 project-card--complete">
+                    </div>
+                    <div class="project-card project-card--3 project-card--complete">
                         <div class="imgtag">
                             <img src="img/laravel-project.png" alt="screenshot of my laravel project website">
                             <p class="tag tag--complete">PHP(LARAVEL)</p>
                         </div>
                         <div class="content">
                             <h2>Laravel Admin Project</h2>
-                            <p>View Project <i class="icon icon-arrow"></i></p>
+                            <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
+                            <a href="https://github.com/Max-Seaman/Admin" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
-                    </a>
+                    </div>
                     <div class="project-card project-card--4 project-card--future">
                         <div class="imgtag">
                             <img src="img/project-stock.jpg" alt="code on computer screen">
@@ -63,7 +68,7 @@ require 'views/layout/sidebar.php';
                         </div>
                         <div class="content">
                             <h2>Future Project</h2>
-                            <p>Coming Soon</p>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
                     <div class="project-card project-card--5 project-card--future">
@@ -73,7 +78,7 @@ require 'views/layout/sidebar.php';
                         </div>
                         <div class="content">
                             <h2>Future Project</h2>
-                            <p>Coming Soon</p>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
                     <div class="project-card project-card--6 project-card--future">
@@ -83,7 +88,7 @@ require 'views/layout/sidebar.php';
                         </div>
                         <div class="content">
                             <h2>Future Project</h2>
-                            <p>Coming Soon</p>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
                 </div>
@@ -142,7 +147,7 @@ require 'views/layout/sidebar.php';
                         $errors = $validation['errors'];
                         $input = $_POST; // preserve inputs
                     }
-                }
+                    }
                 ?>
 
                 <!-- Display success message -->
@@ -206,6 +211,16 @@ require 'views/layout/sidebar.php';
             </div>
 
             <?php require 'views/layout/footer.php'; ?>
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function(){
+                        var form = document.getElementById('contactform');
+                        if (form) {
+                            form.scrollIntoView({behavior: 'auto', block: 'start'});
+                        }
+                    });
+                </script>
+            <?php endif; ?>
         </div>
         <script src="javascript/typing.js"></script>
         <script src="javascript/blossom.js"></script>

@@ -14,18 +14,18 @@
 
     .initials {
         @include flex(null, center, center);
-        @include size(120px, 120px);
-        margin: 30px;
+        @include size(90px, 90px);
+        margin: 20px;
         border-radius: 50%;
         border: 4px solid $primary__color--red;
-        font-size: 4rem;
+        font-size: 3.5rem;
 
         &:hover {
             background-color: $primary__color--red;
         }
     }
 
-    h2, .list--bordered {
+    .list--bordered {
         border-top: 3px solid $primary__color--lightred;
         border-bottom: 3px solid $primary__color--lightred;
         @include spacing(25px, 25px);

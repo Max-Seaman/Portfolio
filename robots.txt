@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reference sitemap for efficient crawling
+Sitemap: https://max-seaman.netmatters-scs.co.uk/sitemap.xml

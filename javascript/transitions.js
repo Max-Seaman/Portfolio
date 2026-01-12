@@ -46,7 +46,6 @@ for (let i = 0; i < links.length; i++) {
 const mainContent = document.getElementById('main-content');
 // Select all links that lead to other pages
 const linksToPages = document.querySelectorAll('a[href^="/"]');
-console.log(linksToPages);
 
 // Filter links that lead to anchors within the same page
 const linksToAnchor = [];
@@ -55,7 +54,6 @@ for (const link of linksToPages) {
         linksToAnchor.push(link);
     }
 }
-console.log(linksToAnchor);
 
 mainContent.classList.add('fade-out'); // Start with main content hidden
 

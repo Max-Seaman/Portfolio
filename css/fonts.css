@@ -24,6 +24,63 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-discord:before {
+  content: "\e901";
+  /*color: #7289da;*/
+}
+.icon-github:before {
+  content: "\e902";
+}
+.icon-bootstrap:before {
+  content: "\e904";
+  /*color: #563d7c;*/
+}
+.icon-css3:before {
+  content: "\e90c";
+  /*color: #1572b6;*/
+}
+.icon-html5:before {
+  content: "\e90d";
+  /*color: #e34f26;*/
+}
+.icon-javascript:before {
+  content: "\e903";
+  /*color: #f7df1e;*/
+}
+.icon-jquery:before {
+  content: "\e905";
+  /*color: #0769ad;*/
+}
+.icon-laravel:before {
+  content: "\e906";
+  /*color: #ff2d20;*/
+}
+.icon-mysql:before {
+  content: "\e907";
+  /*color: #4479a1;*/
+}
+.icon-php:before {
+  content: "\e908";
+  /*color: #777bb4;*/
+}
+.icon-react:before {
+  content: "\e909";
+  /*color: #61dafb;*/
+}
+.icon-sass:before {
+  content: "\e90a";
+  /*color: #c69;*/
+}
+.icon-tailwindcss:before {
+  content: "\e90b";
+  /*color: #38b2ac;*/
+}
+.icon-menu:before {
+  content: "\e900";
+}
+.icon-arrow:before {
+  content: "\ea3c";
+}
 .icon-up:before {
   content: "\f077";
 }
@@ -32,16 +89,4 @@
 }
 .icon-linkedin:before {
   content: "\f0e1";
-}
-.icon-menu:before {
-  content: "\e900";
-}
-.icon-discord:before {
-  content: "\e901";
-}
-.icon-github:before {
-  content: "\e902";
-}
-.icon-arrow:before {
-  content: "\ea3c";
 }

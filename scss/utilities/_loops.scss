@@ -14,11 +14,11 @@ $cards: (
     .#{$key} {
         grid-column: span 6;
 
-        @include mq(sm) {
+        @include mq(lg) {
             grid-column: span 3;
         }
 
-        @include mq(xl) {
+        @include mq(xxl) {
             grid-column: span 2;
         }
     }
