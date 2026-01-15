@@ -15,7 +15,7 @@ require 'views/layout/sidebar.php';
                     <div class="content">
                         <h1>Introduction to Scion Coalition Scheme</h1>
                         <p>The Scion Coalition Scheme is an intensive, specially tailored training program run by Netmatters in order to give willing candidates the opportunity to enter the industry as web developers. Under the supervision of senior web developers, scions generally aim to complete training within six to nine months. The course is intensive and therefore the level of learning achieved is extensive in a short space of time.</p>
-                        <a href="https://www.netmatters.co.uk/train-for-a-career-in-tech" target="_blank" class="learnmore">Learn More <i class="icon icon-arrow"></i></a>
+                        <a href="https://www.netmatters.co.uk/train-for-a-career-in-tech" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
                     </div>
                 </div>
             </div>
@@ -30,9 +30,9 @@ require 'views/layout/sidebar.php';
                         <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they?ve covered in certain areas.</p>
                         <div class="score">
                             <h2>Total Score</h2>
-                            <a href="https://teamtreehouse.com/profiles/maxseaman2" target="_blank">3,771</a>
+                            <a href="https://teamtreehouse.com/profiles/maxseaman2" target="_blank">8,912</a>
                         </div>
-                        <a href="https://teamtreehouse.com" target="_blank" class="learnmore">Learn More <i class="icon icon-arrow"></i></a>
+                        <a href="https://teamtreehouse.com" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ require 'views/layout/sidebar.php';
                             <li>Broad spectrum of clients, working nationwide</li>
                             <li>Operate to strict company values</li>
                         </ul>
-                        <a href="https://www.netmatters.co.uk" target="_blank" class="learnmore">Learn More <i class="icon icon-arrow"></i></a>
+                        <a href="https://www.netmatters.co.uk" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
                     </div>
                 </div>
             </div>

@@ -61,14 +61,15 @@ require 'views/layout/sidebar.php';
                             <a href="https://github.com/Max-Seaman/Admin" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
-                    <div class="project-card project-card--4 project-card--future">
+                    <div class="project-card project-card--4 project-card--complete">
                         <div class="imgtag">
-                            <img src="img/project-stock.jpg" alt="code on computer screen">
-                            <p class="tag tag--future">Future</p>
+                            <img src="img/react-project.jpg" alt="screenshot of my react project website">
+                            <p class="tag tag--complete">React</p>
                         </div>
                         <div class="content">
-                            <h2>Future Project</h2>
-                            <span>Coming Soon</span>
+                            <h2>React Shopping List</h2>
+                            <a href="https://react.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
+                            <a href="https://github.com/Max-Seaman/React-Shopping-List" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
                     <div class="project-card project-card--5 project-card--future">

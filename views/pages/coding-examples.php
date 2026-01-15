@@ -14,7 +14,8 @@ require 'views/layout/sidebar.php';
                 <div class="example">
                     <h2>Netmatters Homepage Recreation</h2>
                     <h3>PHP Database Connection</h3>
-                    <p>From my recreaion of the <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" class="link">Netmatters</a> website project. Made during my time on the Netmatters SCS course.</p>
+                    <p>From my recreaion of the <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" class="link">Netmatters</a> website project. The code below demonstrates a secure PDO database connection and prepared statements used to safely store contact form submissions. Made during my time on the Netmatters SCS course.</p>
+                    <p></p>
                     <pre><code class="language-php">
 require_once realpath(__DIR__ . "/../vendor/autoload.php");
 use Dotenv\Dotenv;
@@ -40,7 +41,7 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (Exception $e) {
-    echo "Database connection failed - coding-examples.php:43";
+    echo "Database connection failed - coding-examples.php:44";
     echo $e->getMessage();
     exit;
 }
@@ -161,7 +162,7 @@ petalImage.onload = () => {
                 <div class="example">
                     <h2>Javascript Image Generator</h2>
                     <h3>Preloading Next Image</h3>
-                    <p>From my <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" class="link">JS Array</a> project. Made during my time on the Netmatters SCS course.</p>
+                    <p>From my <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" class="link">JS Array</a> project. This preloads the next image in the background so new images appear instantly, improving perceived performance and user experience. Made during my time on the Netmatters SCS course.</p>
                     <pre><code class="language-js">
 let loading = false;
 let nextImage = null;
@@ -204,7 +205,8 @@ async function loadRandomImage() {
     }
 }
                     </code></pre>
-                    
+                    <p>This implementation emphasises responsiveness by disabling user input during loading and providing clear error handling and feedback when image retrieval fails.</p>
+                    <p>It preloads the next image for near-instant swaps and disables controls during loading to prevent duplicate requests.</p>
                 </div>
 
                 <div class="example">
