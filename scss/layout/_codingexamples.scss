@@ -1,18 +1,11 @@
 // examples
 .coding-examples {
     @include flex(column, center, center);
-    gap: 60px;
-    width: 90%;
+    gap: 75px;
     padding-bottom: 40px;
 
     h1 {
-        color: $primary__color--dark;
-        margin: 65px 0 5px;
-        font-size: 2.5rem;
-
-        @include mq(sm) {
-            font-size: 4rem;
-        }
+        @extend %title;
     }
 
     p {
@@ -29,6 +22,7 @@
         @extend %light-container;
         padding: 20px;
         width: 100%;
+        text-align: center;
 
         @include mq(xxl) {
             width: 1300px;
@@ -49,31 +43,25 @@
         p {
             line-height: $base-line-height;
             width: 100%;
-            text-align: center;
+        }
+
+        
+        .code-block {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center; /* center smaller code blocks */
+
+            pre[class*="language-"] {
+                @extend %dark-container;
+                max-width: 100% !important;
+                width: auto !important; /* shrink to content when possible */
+                padding: 1rem !important;
+                margin: 0 !important;
+                overflow-x: auto !important; /* enable horizontal scroll inside pre */
+            }
         }
     }
-}
-
-
-// code
-
-/* Force overrides for Prism code blocks */
-pre[class*="language-"],
-pre[class*="language-"] code,
-pre[class*="language-"] code * {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-}
-
-pre[class*="language-"] {
-    width: 80% !important;       /* shrink block */
-    max-width: 100% !important;  /* don’t overflow */
-    margin: 1rem auto !important;
-    padding: 1rem !important;
-    background: #fcf1de !important;  /* your background */
-    color: #4d4d4d !important;       /* default text */
-    box-shadow: none !important;
-    overflow-x: auto !important;
-    border-radius: 10px !important;
 }

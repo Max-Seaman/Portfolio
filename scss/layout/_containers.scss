@@ -83,7 +83,7 @@ p, li, input, textarea, button {
 
 //CONTAINER MQ
 
-#about, #skills, #projects, #contactform, .container, #extrainfo {
+#about, #skills, #projects, #contactform, .container, #extrainfo, .cards, .coding-examples {
 
     @include mq(xxs) {
         /* ensure the block doesn't overflow on very small screens */
@@ -103,7 +103,7 @@ p, li, input, textarea, button {
     }
 }
 
-#about, #skills, #projects, #contactform, #extrainfo {
+#about, #skills, #projects, #contactform, #extrainfo, .cards, .coding-examples {
     @include mq(xxl) {
         max-width: 1310px;
     } 

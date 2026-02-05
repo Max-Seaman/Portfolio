@@ -1,70 +1,75 @@
-.container {
-    @include flex(column, center);
-    @include spacing(20px, 45px 20px 0);
-    @extend %light-container;
-    text-align: center;
-
-    &__bottom {
-        margin-bottom: 45px;
-    }
-
-    @include mq(xl) {
-        flex-direction: row;
-        text-align: left;
-    }
-}
-
-.image-wrapper {
-    @include flex(null, center);
-    @include size(100%, null, 600px);
-    position: relative;
-
-    img {
-        width: 100%;
-        filter: sepia(60%);
-    }
-
-    @include mq(xl) {
-        margin-right: 20px;
-    }
-}
-
-.content {
-    @include size(90%, null, 600px);
+.cards{
+    gap: 70px;
 
     h1 {
+        @extend %title;
+    }
+
+    .card {
+        @include flex(column, center);
+        @include spacing(20px, 75px 0 0 0);
+        @extend %light-container;
+        text-align: center;
+
         @include mq(xl) {
-            margin-top: 0;
-        }
-    }
-
-    ul {
-        list-style-position: inside;
-        padding-left: 0;
-    }
-
-    ul, p {
-        margin-bottom: 30px;
-        line-height: $base-line-height;
-    }
-
-    a {
-        color: $primary__color--dark;
-        font-size: 1.25rem;
-
-        &:hover {
-            color: $primary__color--red;
-        }
-    }
-
-    .score {
-        margin-bottom: 30px;
-        h2 {
-            margin-bottom: 10px;
+            flex-direction: row;
+            text-align: left;
         }
 
-        a {
-            font-size: 2rem;
+        .image-wrapper {
+            @include flex(null, center);
+            @include size(100%, null, 600px);
+            position: relative;
+
+            img {
+                width: 100%;
+                filter: sepia(60%);
+            }
+
+            @include mq(xl) {
+                margin-right: 20px;
+            }
+        }
+
+        .content {
+            @include size(90%, null, 600px);
+
+            h2 {
+                font-size: 2rem;
+                @include mq(xl) {
+                    margin-top: 0;
+                }
+            }
+
+            ul {
+                list-style-position: inside;
+                padding-left: 0;
+            }
+
+            ul, p {
+                margin-bottom: 30px;
+                line-height: $base-line-height;
+            }
+
+            .learn {
+                @extend %button;
+            }
+
+            .score {
+                margin-bottom: 30px;
+                h3 {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    font-size: 2rem;
+                    color: $primary__color--dark;
+
+                    &:hover {
+                        color: $primary__color--red;
+                    }
+                }
+            }
         }
     }
 }

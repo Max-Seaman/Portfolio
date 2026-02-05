@@ -7,54 +7,62 @@ require 'views/layout/sidebar.php';
 ?>
 
         <div id="main-content">
-            <div id="scs">
-                <div class="container">
-                    <div class="image-wrapper">
-                        <img src="../img/scsimg.jpg" alt="image of computer wiht code on it">
-                    </div>
-                    <div class="content">
-                        <h1>Introduction to Scion Coalition Scheme</h1>
-                        <p>The Scion Coalition Scheme is an intensive, specially tailored training program run by Netmatters in order to give willing candidates the opportunity to enter the industry as web developers. Under the supervision of senior web developers, scions generally aim to complete training within six to nine months. The course is intensive and therefore the level of learning achieved is extensive in a short space of time.</p>
-                        <a href="https://www.netmatters.co.uk/train-for-a-career-in-tech" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
+            <div class="cards">
+                <h1>
+                    <span><</span>
+                    <span class="title">SCS Scheme</span>
+                    <span>></span>
+                </h1>
 
-            <div id="treehouse">
-                <div class="container">
-                    <div class="image-wrapper">
-                        <img src="../img/treehouseimg.jpg" alt="computer on desk which shows online learning">
-                    </div>
-                    <div class="content">
-                        <h1>Treehouse</h1>
-                        <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they?ve covered in certain areas.</p>
-                        <div class="score">
-                            <h2>Total Score</h2>
-                            <a href="https://teamtreehouse.com/profiles/maxseaman2" target="_blank">8,912</a>
+                <div id="scs">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="../img/scsimg.jpg" alt="image of computer wiht code on it">
                         </div>
-                        <a href="https://teamtreehouse.com" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
+                        <div class="content">
+                            <h2>Introduction to Scion Coalition Scheme</h2>
+                            <p>The Scion Coalition Scheme is an intensive, specially tailored training program run by Netmatters in order to give willing candidates the opportunity to enter the industry as web developers. Under the supervision of senior web developers, scions generally aim to complete training within six to nine months. The course is intensive and therefore the level of learning achieved is extensive in a short space of time.</p>
+                            <a href="https://www.netmatters.co.uk/train-for-a-career-in-tech" target="_blank" class="learn">Learn More <i class="icon icon-arrow"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="netmatters">
-                <div class="container container__bottom">
-                    <div class="image-wrapper">
-                        <img src="../img/netmattersimg.jpg" alt="group working on coding project">
+                <div id="treehouse">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="../img/treehouseimg.jpg" alt="computer on desk which shows online learning">
+                        </div>
+                        <div class="content">
+                            <h2>Treehouse</h2>
+                            <p>Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more. By completing courses users can earn points, allowing them to track their progress and see how much they?ve covered in certain areas.</p>
+                            <div class="score">
+                                <h3>Total Score</h3>
+                                <a href="https://teamtreehouse.com/profiles/maxseaman2" target="_blank">8,912</a>
+                            </div>
+                            <a href="https://teamtreehouse.com" target="_blank" class="learn">Learn More <i class="icon icon-arrow"></i></a>
+                        </div>
                     </div>
-                    <div class="content">
-                        <h1>About Netmatters</h1>
-                        <ul>
-                            <li>Established in 2008</li>
-                            <li>Norfolk&apos;s leading technology company</li>
-                            <li>Winner of the Princess Royal Training Award</li>
-                            <li>Winner of the EDP Skills of Tomorrow Award</li>
-                            <li>80+ staff, 2 locations across Norfolk</li>
-                            <li>Digital Marketing, Website &amp; Software development &amp; IT Support</li>
-                            <li>Broad spectrum of clients, working nationwide</li>
-                            <li>Operate to strict company values</li>
-                        </ul>
-                        <a href="https://www.netmatters.co.uk" target="_blank">Learn More <i class="icon icon-arrow"></i></a>
+                </div>
+
+                <div id="netmatters">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="../img/netmattersimg.jpg" alt="group working on coding project">
+                        </div>
+                        <div class="content">
+                            <h2>About Netmatters</h2>
+                            <ul>
+                                <li>Established in 2008</li>
+                                <li>Norfolk&apos;s leading technology company</li>
+                                <li>Winner of the Princess Royal Training Award</li>
+                                <li>Winner of the EDP Skills of Tomorrow Award</li>
+                                <li>80+ staff, 2 locations across Norfolk</li>
+                                <li>Digital Marketing, Website &amp; Software development &amp; IT Support</li>
+                                <li>Broad spectrum of clients, working nationwide</li>
+                                <li>Operate to strict company values</li>
+                            </ul>
+                            <a href="https://www.netmatters.co.uk" target="_blank" class="learn">Learn More <i class="icon icon-arrow"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

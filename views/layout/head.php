@@ -12,7 +12,7 @@
 
         <title><?= $title ?></title>
         <?php if ($title === "Coding Examples") { ?>
-            <link href="https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-gruvbox-light.min.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-gruvbox-dark.min.css" rel="stylesheet">
         <?php } ?>
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/style.css">

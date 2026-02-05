@@ -28,50 +28,71 @@ require 'views/layout/sidebar.php';
                 <h2 class="project_heading">My Projects</h2>
                 <p class="project_description">Here are some of my completed and ongoing projects. Click on any project to view it in detail.</p>
                 <div class="grid">
-                    <div class="project-card project-card--1 project-card--complete">
-                        <div class="imgtag">
-                            <img src="img/nm-homepage.jpg" alt="image of netmatters homepage">
-                            <p class="tag tag--complete">HTML/CSS</p>
+
+                    <div class="project-card project-card--1 project-card--complete flip">
+                        <div class="front">
+                            <div class="imgtag">
+                                <img src="img/nm-homepage.jpg" alt="image of netmatters homepage">
+                                <p class="tag tag--complete">HTML/CSS</p>
+                            </div>
+                            <div class="content">
+                                <h2>Netmatters Homepage</h2>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h2>Netmatters Homepage</h2>
+                        <div class="back">
                             <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
                             <a href="https://github.com/Max-Seaman/Netmatters-Homepage" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
-                    <div class="project-card project-card--2 project-card--complete">
-                        <div class="imgtag">
-                            <img src="img/js-array.jpg" alt="screenshot of my javascript array website">
-                            <p class="tag tag--complete">JAVASCRIPT</p>
+
+                    <div class="project-card project-card--2 project-card--complete flip">
+                        <div class="front">
+                            <div class="imgtag">
+                                <img src="img/js-array.jpg" alt="screenshot of my javascript array website">
+                                <p class="tag tag--complete">JAVASCRIPT</p>
+                            </div>
+                            <div class="content">
+                                <h2>Random Image Generator</h2>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h2>Javascript Array -<br>Random Image Generator</h2>
+                        <div class="back">
                             <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
                             <a href="https://github.com/Max-Seaman/JS-Array" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
-                    <div class="project-card project-card--3 project-card--complete">
-                        <div class="imgtag">
-                            <img src="img/laravel-project.png" alt="screenshot of my laravel project website">
-                            <p class="tag tag--complete">PHP(LARAVEL)</p>
+
+                    <div class="project-card project-card--3 project-card--complete flip">
+                        <div class="front">
+                            <div class="imgtag">
+                                <img src="img/laravel-project.png" alt="screenshot of my laravel project website">
+                                <p class="tag tag--complete">PHP(LARAVEL)</p>
+                            </div>
+                            <div class="content">
+                                <h2>Laravel Admin Project</h2>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h2>Laravel Admin Project</h2>
+                        <div class="back">
                             <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
                             <a href="https://github.com/Max-Seaman/Admin" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
-                    <div class="project-card project-card--4 project-card--complete">
-                        <div class="imgtag">
-                            <img src="img/react-project.jpg" alt="screenshot of my react project website">
-                            <p class="tag tag--complete">React</p>
+
+                    <div class="project-card project-card--4 project-card--complete flip">
+                        <div class="front">
+                            <div class="imgtag">
+                                <img src="img/react-project.jpg" alt="screenshot of my react project website">
+                                <p class="tag tag--complete">React</p>
+                            </div>
+                            <div class="content">
+                                <h2>React Shopping List</h2>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h2>React Shopping List</h2>
+                        <div class="back">
                             <a href="https://react.max-seaman.netmatters-scs.co.uk/" target="_blank">View Project <i class="icon icon-arrow"></i></a>
                             <a href="https://github.com/Max-Seaman/React-Shopping-List" target="_blank">View Code<i class="icon icon-arrow"></i></a>
                         </div>
                     </div>
+
                     <div class="project-card project-card--5 project-card--future">
                         <div class="imgtag">
                             <img src="img/project-stock.jpg" alt="code on computer screen">
@@ -79,9 +100,9 @@ require 'views/layout/sidebar.php';
                         </div>
                         <div class="content">
                             <h2>Future Project</h2>
-                            <span>Coming Soon</span>
                         </div>
                     </div>
+
                     <div class="project-card project-card--6 project-card--future">
                         <div class="imgtag">
                             <img src="img/project-stock.jpg" alt="code on computer screen">
@@ -89,7 +110,6 @@ require 'views/layout/sidebar.php';
                         </div>
                         <div class="content">
                             <h2>Future Project</h2>
-                            <span>Coming Soon</span>
                         </div>
                     </div>
                 </div>

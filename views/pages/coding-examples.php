@@ -9,14 +9,18 @@ require 'views/layout/sidebar.php';
         <div id="main-content">
 
             <div class="coding-examples">
-                <h1>< Coding Examples ></h1>
+                <h1>
+                    <span><</span>
+                    <span class="title">Coding Examples</span>
+                    <span>></span>
+                </h1>
 
                 <div class="example">
                     <h2>Netmatters Homepage Recreation</h2>
                     <h3>PHP Database Connection</h3>
                     <p>From my recreaion of the <a href="https://netmatters.max-seaman.netmatters-scs.co.uk/" class="link">Netmatters</a> website project. The code below demonstrates a secure PDO database connection and prepared statements used to safely store contact form submissions. Made during my time on the Netmatters SCS course.</p>
-                    <p></p>
-                    <pre><code class="language-php">
+                    <div class="code-block">
+                        <pre><code class="language-php">
 require_once realpath(__DIR__ . "/../vendor/autoload.php");
 use Dotenv\Dotenv;
 
@@ -41,13 +45,15 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (Exception $e) {
-    echo "Database connection failed - coding-examples.php:44";
+    echo "Database connection failed - coding-examples.php:48";
     echo $e->getMessage();
     exit;
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <p>For this I added an env file using a Composer package. I did this so the database credentials are not stored in any file the user has access to. This then reduces the risk of a malicious attack. Then use try-catch a statement to link to the database.</p>
-                    <pre><code class="language-php">
+                    <div class="code-block">
+                        <pre><code class="language-php">
 function storeContactForm($name, $company, $email, $phone, $message, $marketing) {
     global $db;
 
@@ -72,7 +78,8 @@ function storeContactForm($name, $company, $email, $phone, $message, $marketing)
         return false; // failure
     }
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <p>This function is called in the contact form page to store the submitted form data into the database. It uses a prepared statement to prevent SQL injection attacks and ensure data integrity.</p>
                 </div>
 
@@ -80,7 +87,8 @@ function storeContactForm($name, $company, $email, $phone, $message, $marketing)
                     <h2>My Portfolio</h2>
                     <h3>Javascript Petal Blossom</h3>
                     <p>From the hero image on the main page of my Portfolio. Researched and made myself to add an immediate eye-catching piece for viewers as soon as my Portfolio is opened. Made during my time on the Netmatters SCS course.</p>
-                    <pre><code class="language-js">
+                    <div class="code-block">
+                        <pre><code class="language-js">
 // Load image
 const petalImage = new Image();
 petalImage.src = 'javascript/img/petal.png';
@@ -129,9 +137,11 @@ class Petal {
         context.restore();
     }
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <p>When the image is loaded, an array of Petal objects is created. Each petal has random properties for position, size, speed, and rotation. Each petal starts in the top right of the image and falls until off-screen where it's removed and a new one is added.</p>
-                    <pre><code class="language-js">
+                    <div class="code-block">
+                        <pre><code class="language-js">
 // When the image is loaded
 petalImage.onload = () => {
     // Empty array for the petals
@@ -155,7 +165,8 @@ petalImage.onload = () => {
 
     animate();  // only start after image loads
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <p>This code handles the animation loop. It continuously updates and redraws each petal on the canvas, creating a smooth falling effect. The canvas is cleared each frame to prevent trails, and requestAnimationFrame is used for efficient animation timing.</p>
                 </div> 
                 
@@ -163,7 +174,8 @@ petalImage.onload = () => {
                     <h2>Javascript Image Generator</h2>
                     <h3>Preloading Next Image</h3>
                     <p>From my <a href="https://js-array.max-seaman.netmatters-scs.co.uk/" class="link">JS Array</a> project. This preloads the next image in the background so new images appear instantly, improving perceived performance and user experience. Made during my time on the Netmatters SCS course.</p>
-                    <pre><code class="language-js">
+                    <div class="code-block">
+                        <pre><code class="language-js">
 let loading = false;
 let nextImage = null;
 
@@ -204,7 +216,8 @@ async function loadRandomImage() {
         loading = false;
     }
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <p>This implementation emphasises responsiveness by disabling user input during loading and providing clear error handling and feedback when image retrieval fails.</p>
                     <p>It preloads the next image for near-instant swaps and disables controls during loading to prevent duplicate requests.</p>
                 </div>
@@ -213,7 +226,8 @@ async function loadRandomImage() {
                     <h2>Laravel Admin Management System</h2>
                     <h3>Company Creation with Validation & Logo Upload</h3>
                     <p>From my <a href="https://laravel.max-seaman.netmatters-scs.co.uk/" class="link">Laravel Company Management</a> project, built as part of the Netmatters SCS course. This function handles new company creation — validating inputs, managing image uploads, and ensuring each company entry has a stored or default logo.</p>
-                    <pre><code class="language-php">
+                    <div class="code-block">
+                        <pre><code class="language-php">
 public function store(Request $request)
 {
     //validation
@@ -245,7 +259,8 @@ public function store(Request $request)
 
     return redirect('/companies');
 }
-                    </code></pre>
+                        </code></pre>
+                    </div>  
                     <p>  
                         This begins by validating incoming form data to ensure each field meets the required format and type — for example, enforcing a valid email and checking that uploaded logos meet minimum size and format requirements.
                     </p>
